@@ -14,7 +14,9 @@ export class TaskService {
   }
 
   addTask(task: string) {
-    this.tasks.push(task)
+    this.tasks.push(task);
+    console.log(this.tasks);
+
   }
 
 
