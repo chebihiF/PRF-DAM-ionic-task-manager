@@ -16,7 +16,13 @@ export class TaskService {
   addTask(task: string) {
     this.tasks.push(task);
     console.log(this.tasks);
+  }
 
+  deleteTask(task_name: string){
+    this.tasks = this.tasks.filter(task => {
+      return task !== task_name
+    })
+    console.log(this.tasks);
   }
 
 
