@@ -13,7 +13,14 @@ export class TaskListPage implements OnInit {
   constructor(private taskService: TaskService) { } //IOC
 
   ngOnInit() {
-    this.tasks = this.taskService.getTasks();
+
   }
+
+  ionViewWillEnter(){
+    this.tasks = this.taskService.getTasks();
+    //console.log(this.taskService.getTasks());
+  }
+
+
 
 }
