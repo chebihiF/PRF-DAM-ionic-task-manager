@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../services/task.service';
 import { NavController } from '@ionic/angular';
+import { Task } from '../task.model';
 
 @Component({
   selector: 'app-add-task',
@@ -9,7 +10,12 @@ import { NavController } from '@ionic/angular';
 })
 export class AddTaskPage implements OnInit {
 
-  taskName! : string
+  task: Task = {
+    id: 0,
+    title: '',
+    exp_date: new Date(),
+    description: ''
+  }
 
   constructor
   (
@@ -21,7 +27,7 @@ export class AddTaskPage implements OnInit {
   }
 
   addTask(){
-    this.taskService.addTask(this.taskName)
+    this.taskService.addTask(this.task)
     this.navController.navigateBack("/task-list")
   }
 

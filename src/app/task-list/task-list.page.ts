@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../services/task.service';
+import { Task } from '../task.model';
 
 @Component({
   selector: 'app-task-list',
@@ -8,7 +9,7 @@ import { TaskService } from '../services/task.service';
 })
 export class TaskListPage implements OnInit {
 
-  tasks!: string[];
+  tasks!: Task[];
 
   constructor(private taskService: TaskService) { } //IOC
 
@@ -21,8 +22,8 @@ export class TaskListPage implements OnInit {
     //console.log(this.taskService.getTasks());
   }
 
-  deleteTask(task: string){
-    this.taskService.deleteTask(task);
+  deleteTask(task_id: number){
+    this.taskService.deleteTask(task_id);
     this.tasks = this.taskService.getTasks();
   }
 

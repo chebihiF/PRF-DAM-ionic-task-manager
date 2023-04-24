@@ -12,10 +12,13 @@
 <ion-content>
   <ion-item *ngFor="let task of tasks">
     <ion-label>
-      {{task}}
+      {{task.title}}
     </ion-label>
+    <ion-note slot="end">
+      {{ task.exp_date | date:'dd/MM/yyyy' }}
+    </ion-note>
     <ion-buttons slot="end">
-      <ion-button (click)="deleteTask(task)">
+      <ion-button (click)="deleteTask(task.id)">
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
