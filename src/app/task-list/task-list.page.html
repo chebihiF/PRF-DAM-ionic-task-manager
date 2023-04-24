@@ -14,5 +14,10 @@
     <ion-label>
       {{task}}
     </ion-label>
+    <ion-buttons slot="end">
+      <ion-button (click)="deleteTask(task)">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-item>
 </ion-content>

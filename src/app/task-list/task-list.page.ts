@@ -21,6 +21,10 @@ export class TaskListPage implements OnInit {
     //console.log(this.taskService.getTasks());
   }
 
+  deleteTask(task: string){
+    this.taskService.deleteTask(task);
+  }
+
 
 
 }
