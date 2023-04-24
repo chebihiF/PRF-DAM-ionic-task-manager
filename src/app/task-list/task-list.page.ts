@@ -23,6 +23,7 @@ export class TaskListPage implements OnInit {
 
   deleteTask(task: string){
     this.taskService.deleteTask(task);
+    this.tasks = this.taskService.getTasks();
   }
 
 

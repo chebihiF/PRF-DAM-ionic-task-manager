@@ -22,7 +22,6 @@ export class TaskService {
     this.tasks = this.tasks.filter(task => {
       return task !== task_name
     })
-    console.log(this.tasks);
   }
 
 
